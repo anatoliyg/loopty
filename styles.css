@@ -1,0 +1,248 @@
+  
+html{
+  	height: 100%;
+  	width: 100%;
+}
+
+body{
+  	margin: 0 auto;
+  	height: 100%;
+  	width: 100%;
+
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 28%, rgba(201,201,201,1) 82%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(28%,rgba(241,241,241,1)), color-stop(82%,rgba(201,201,201,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 28%,rgba(201,201,201,1) 82%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 28%,rgba(201,201,201,1) 82%,rgba(246,246,246,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 28%,rgba(201,201,201,1) 82%,rgba(246,246,246,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 28%,rgba(201,201,201,1) 82%,rgba(246,246,246,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+}
+
+
+#wrapper{
+	height: 100%;
+  	width: 100%;
+}
+
+#top_header{
+	padding: 20px;
+	background-color: #eee9e9;
+	height: 20px;
+	margin-bottom: 20px;
+	color: black;
+	font-size: 20px;
+	font-family: sans-serif;
+
+}
+
+#content{
+	padding: 12px;
+	min-height: 100%;
+	width: 66%;
+	padding-bottom: 100px;
+
+}
+
+.controls{
+	/*display: inline-block;
+	white-space: nowrap;
+	vertical-align: top;*/
+}
+
+.control-item{
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+	margin-right: 20px;
+}
+
+
+#footer{
+	/*display: inline-block;
+	white-space: nowrap;
+	vertical-align: top;*/
+	height: 100px;
+	width: 100%;
+	background-color:rgba(200,200,200,0.9);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+
+.video_player{
+
+	position: fixed;
+	width: 32%;
+	height: 50%;
+	right: 40px;
+	top: 136px;
+	background-color: gray;
+
+}
+
+.search_item{
+	width: 300px;
+	height: 200px;
+	background-color: gray;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	border: 1px solid black;
+}
+
+.search_item:hover{
+
+	border: 1px solid #42C0FB;
+}
+
+.search_item .vid_thumb_wrapper{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+
+}
+
+.search_item .vid_thumb_wrapper img{
+	max-width: 300px;
+}
+
+.search_item .vid_title{
+	position: absolute;
+	color: white;
+	font-size: 12px;
+	background-color:rgba(0,0,0,0.4);
+	/*background-color: purple;*/
+}
+
+.search_item .vid_author{
+	position: absolute;
+	color: white;
+	left: 0;
+	bottom: 4px;
+	background-color: purple;
+}
+
+.search_item .vid_views{
+	position: absolute;
+	color: white;
+	left: 0;
+	bottom: 24px;
+	font-size: 12px;
+	background-color: purple;
+}
+
+.search_item .add_to_queue_btn{
+
+	position: absolute;
+	color: white;
+	right: 4px;
+	bottom: 4px;
+	background-color: purple;
+}
+
+.search_item .btn{
+
+	color: black;
+}
+
+
+.queue_item{
+	width: 120px;
+	height: 90px;
+	background-color: gray;
+	float: left;
+	margin-right: 3px;
+	margin-left: 10px;
+	margin-top: 5px;
+	position: relative;
+	border: 1px solid white;
+
+}
+
+.queue_item .vid_thumb_wrapper{
+	position: absolute;
+	width: 120px;
+	height: 90px;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+
+}
+
+.queue_item .vid_thumb_wrapper img{
+	max-width: 120px;
+}
+
+.queue_item .vid_title{
+	position: absolute;
+	color: white;
+	top: 0px;
+	left: 0px;
+	font-size: 10px;
+	background-color:rgba(0,0,0,0.4);
+	line-height: 11px;
+	/*background-color: purple;*/
+}
+
+.queue_item .vid_author{
+	position: absolute;
+	color: white;
+	left: 0;
+	bottom: 0;
+	font-size: 11px;
+	background-color: purple;
+}
+
+.queue_item .vid_views{
+	position: absolute;
+	color: white;
+	right: 10;
+	bottom: 0;
+	background-color: purple;
+	font-size: 12px;
+}
+
+
+
+.shadow{
+
+	-webkit-box-shadow: 3px 3px 8px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    3px 3px 8px rgba(50, 50, 50, 0.3);
+	box-shadow:         3px 3px 8px rgba(50, 50, 50, 0.3);
+}
+
+
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+

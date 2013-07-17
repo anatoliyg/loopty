@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="Loopty">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <script type="text/ng-template" id="video_thumb">
+            <div class="search_item shadow">
+                <div class="vid_thumb_wrapper" ng-click="playVideo(vid)">
+                    <img ng-src="{{vid.media$group.media$thumbnail[0].url}}">
+                </div>
+                <div class="vid_title">
+                    {{vid.title.$t }} 
+                </div>
+                <div class="vid_author">
+                    {{vid.author[0].name.$t | uppercase }}
+                </div>
+                <div class="vid_views">
+                    {{vid.yt$statistics.viewCount}} views
+                </div>
+                <button class="add_to_queue_btn btn"  ng-click="addToQueue(vid)"><i class="icon-plus"></i>Add</button>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="queue_thumb">
+            <div class="queue_item shadow">
+                <div class="vid_thumb_wrapper" ng-click="playVideo(vid)">
+                    <img ng-src="{{vid.media$group.media$thumbnail[0].url}}">
+                </div>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="video_player">
+            <div class="video_player shadow">
+                <iframe width="100%" height="100%" frameborder="0" allowfullscreen ng-src="{{currentEmbedUrl}}">
+                </iframe>
+            </div>
+
+        </script>
+
+        <div id="wrapper" ng-controller="LooptyCtrl" ng-init="searchTerm='HBO'; setupResize(); doSearch()">
+            <div id="top_header">@Loopty V 1.02 (AngularJS)
+            </div>
+            <div id="content" class="cf">
+                <div class="controls">
+                    <form class="form-horizontal control-item" class="shadow">
+                        <input type="text" ng-model="searchTerm" ng-change="doSearch()" >
+                        <button class="btn" ng-click="doSearch()"><i class="icon-search"></i>Search</button>
+                    </form>
+
+                    <div class="control-item">
+                        <select ng-model="currentFilter" ng-options="c.name for c in filterOptions" ng-change="selectChanged()">
+                          <option value=""> Sort by... </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results_holder cf">
+                    <videothumb  ng-repeat="vid in searchResults.feed.entry | orderBy:currentFilter.theFilter" >
+                    </videothumb>
+                </div>
+
+                <videoplayer>
+                </videoplayer>                
+
+            </div>
+            <div id="footer">
+                <queuethumb ng-repeat="vid in queue">
+                </queuethumb>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="http://code.angularjs.org/angular-1.0.0rc4.min.js"></script>
+        <script type="text/javascript" src="http://code.angularjs.org/angular-resource-1.0.0rc4.min.js"></script>
+        <script type="text/javascript" src="loopty.js"></script>
+    </body>
+</html>
